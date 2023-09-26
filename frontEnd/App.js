@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { View, Button, Platform, SafeAreaView, StyleSheet, Alert } from 'react-native';
 import * as FileSystem from 'expo-file-system';
 import FileTransferComponent from './components/FileTransferComponent';
+import LogIn from './Screens/LogIn';
 
 const App = () => {
   const macAddress = '00:11:22:33:44:55'; // Replace with the actual MAC address
@@ -121,11 +122,12 @@ const App = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View>
+      {/* <View>
         <Button title="Sync Directory" onPress={createAndSyncDirectory} />
         <Button title="Export Files" onPress={handleExportFiles} />
         <FileTransferComponent/>
-      </View>
+      </View> */}
+      <LogIn/>
     </SafeAreaView>
   );
 };
