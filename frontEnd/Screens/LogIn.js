@@ -1,31 +1,125 @@
-import { View, Text, TouchableOpacity } from 'react-native'
-import React from 'react'
-import { TextInput } from 'react-native'
+import {
+  View,
+  Text,
+  SafeAreaView,
+  Image,
+  TextInput,
+  TouchableOpacity,
+} from "react-native";
+import React from "react";
 
 const LogIn = () => {
   return (
-    <View className={'flex justify-center items-center h-screen'}>
-	<View className={'flex-col space-y-3 bg-blue-300 p-4 rounded-md'}>
-		<Text
-		className={'font-semibold text-lg font-sans '}
-		>Login</Text>
-		<TextInput 
-		className={'w-60 bg-slate-100 p-2 rounded'}
-		placeholder='Username'
-		/>
-		<TextInput 
-		className={'w-60 bg-slate-100 p-2 rounded'}
-		placeholder='Password'
-		/>
-		<TouchableOpacity
-		className={'bg-yellow-200 w-20 items-center justify-center p-2 rounded ml-20'}
-		activeOpacity={0.7}
-		>
-			<Text>Login</Text>
-		</TouchableOpacity>
-	</View>
-    </View>
-  )
-}
+    <SafeAreaView>
+      <View className={"flex-col"}>
+        {/* main */}
+        <View className={"mt-16 mb-8 flex items-center"}>
+          {/* pfp */}
+          <Image
+            source={{
+              uri: "https://d1mvj2ulps5lli.cloudfront.net/avatars/400x400/291816.png?t=1528988397",
+            }}
+            className={"w-28 h-28 rounded-full"}
+          />
+        </View>
+        <View className={"mx-5"}>
+          <Text className={"text-2xl font-semibold "}>Login</Text>
+          <Text className={"my-3 text-gray-500"}>
+            Login to continue using the app
+          </Text>
+          <Text className={"text-xl font-semibold mt-2"}>Email</Text>
+          <TextInput
+            keyboardType="email-address"
+            className={
+              "w-full bg-gray-200 text-base mt-2 p-3 pb-4 rounded-full"
+            }
+            placeholder="Enter your email"
+          />
+          <Text className={"text-xl font-semibold mt-2"}>Password</Text>
+          <TextInput
+            className={
+              "w-full bg-gray-200 text-base mt-2 p-3 pb-4 rounded-full"
+            }
+            placeholder="Enter your password"
+          />
 
-export default LogIn
+          <View className={"flex items-end mt-3"}>
+            <TouchableOpacity>
+              <Text className={"text-gray-500"}>Forgot Password?</Text>
+            </TouchableOpacity>
+          </View>
+          <TouchableOpacity
+            activeOpacity={0.8}
+            className={
+              "bg-blue-500 w-full mt-6 py-3 rounded-full flex items-center justify-center"
+            }
+          >
+            <Text className={"text-white text-lg font"}>Login</Text>
+          </TouchableOpacity>
+        </View>
+        <View className={"flex-row  mt-7 items-center"}>
+          {/* or part */}
+          <View className={"w-1/3 h-0.5 bg-gray-300"} />
+          <View className={"mx-4"}>
+            <Text>Or Login With</Text>
+          </View>
+          <View className={"w-1/3 h-0.5 bg-gray-300"} />
+        </View>
+        <View>
+          {/* all buttons */}
+          <View
+            className={"flex-row mt-7 items-center justify-center space-x-5"}
+          >
+            <TouchableOpacity
+              activeOpacity={0.8}
+              className={
+                "bg-gray-100 border border-gray-300 mt-1 p-3 rounded-full flex items-center justify-center"
+              }
+            >
+              <Image
+                className={"w-8 h-8"}
+                source={{
+                  uri: "https://static-00.iconduck.com/assets.00/google-icon-2048x2048-czn3g8x8.png",
+                }}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity
+              activeOpacity={0.8}
+              className={
+                "bg-gray-100 border border-gray-300 mt-1 p-3 rounded-full flex items-center justify-center"
+              }
+            >
+              <Image
+                className={"w-8 h-8 "}
+                source={{
+                  uri: "https://images.hindustantimes.com/tech/img/2023/09/21/1600x900/fb_1695273515215_1695273522698.jpg",
+                }}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity
+              activeOpacity={0.8}
+              className={
+                "bg-gray-100 border border-gray-300 mt-1 p-3 rounded-full flex items-center justify-center"
+              }
+            >
+              <Image
+                className={"w-8 h-8"}
+                source={{
+                  uri: "https://cdn.freebiesupply.com/images/large/2x/apple-logo-transparent.png",
+                }}
+              />
+            </TouchableOpacity>
+          </View>
+        </View>
+        <View className={"flex-row mt-7 items-center justify-center"}>
+          <Text className={"text-gray-500"}>Don't have an account?</Text>
+          <TouchableOpacity>
+            <Text className={"text-blue-500 ml-2"}>Register</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    </SafeAreaView>
+  );
+};
+
+export default LogIn;
