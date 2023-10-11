@@ -4,6 +4,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
 import LogIn from "./Screens/LogIn";
+import Register from "./Screens/Register";
 
 
 
@@ -18,6 +19,7 @@ const App = () => {
         }}
       >
         <Stack.Screen name="Login" component={LogIn} />
+        <Stack.Screen name="Register" component={Register} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -5,10 +5,12 @@ import {
   Image,
   TextInput,
   TouchableOpacity,
+  StatusBar,
 } from "react-native";
 import React from "react";
 
-const LogIn = () => {
+const LogIn = ({navigation}) => {
+
   return (
     <SafeAreaView>
       <View className={"flex-col"}>
@@ -57,7 +59,7 @@ const LogIn = () => {
             <Text className={"text-white text-lg font"}>Login</Text>
           </TouchableOpacity>
         </View>
-        <View className={"flex-row  mt-7 items-center"}>
+        <View className={"flex-row  mt-7 items-center ml-2"}>
           {/* or part */}
           <View className={"w-1/3 h-0.5 bg-gray-300"} />
           <View className={"mx-4"}>
@@ -113,7 +115,9 @@ const LogIn = () => {
         </View>
         <View className={"flex-row mt-7 items-center justify-center"}>
           <Text className={"text-gray-500"}>Don't have an account?</Text>
-          <TouchableOpacity>
+          <TouchableOpacity
+          onPress={()=>{navigation.navigate("Register")}}
+          >
             <Text className={"text-blue-500 ml-2"}>Register</Text>
           </TouchableOpacity>
         </View>
