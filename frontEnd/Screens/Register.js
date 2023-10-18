@@ -75,6 +75,9 @@ const Register = ({navigation}) => {
             />
 
             <TouchableOpacity
+            onPress={()=>{
+              navigation.replace("Home")
+            }}
               activeOpacity={0.8}
                           //  onPress={() => { navigation.navigate('Home')}}
               className={

@@ -14,8 +14,9 @@ const LogIn = ({navigation}) => {
   return (
     <SafeAreaView>
       <View className={"flex-col"}>
+        <StatusBar animated={true} />
         {/* main */}
-        <View className={"mt-16 mb-8 flex items-center"}>
+        <View className={"mt-10 mb-8 flex items-center"}>
           {/* pfp */}
           <Image
             source={{
