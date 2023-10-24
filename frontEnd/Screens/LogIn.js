@@ -53,6 +53,7 @@ const LogIn = ({navigation}) => {
           </View>
           <TouchableOpacity
             activeOpacity={0.8}
+            onPress={navigation.navigate("Home")}
             className={
               "bg-blue-500 w-full mt-6 py-3 rounded-full flex items-center justify-center"
             }
