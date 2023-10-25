@@ -64,14 +64,17 @@ const Home = () => {
               {/* Select File */}
               {isSelected ? (
                 <>
-                  <View className={"flex-row items-center"}>
+                  {/* <View className={"flex-row items-center"}>
                     <Text className={"text-xl font-semibold"}>Select File</Text>
                     <Text className={"text-red-500"}>*</Text>
-                  </View>
-                  <Button
-                    title="Select Document"
-                    onPress={this._pickDocument}
-                  />
+                  </View> */}
+                  
+                  <TouchableOpacity
+                  className={'border border-dashed py-2 my-2'}
+                  onPress={this._pickDocument}
+                  >
+                    <Text>Select File</Text>
+                  </TouchableOpacity>
                 </>
               ) : (
                 <>
@@ -83,7 +86,8 @@ const Home = () => {
                     File Size : {Math.floor(file?.size / 1024)} KB
                   </Text>
                   <TouchableOpacity
-                  className={'bg-green-600/90 my-4 w-20 p-2 rounded-md'}
+
+                  className={'bg-green-600/90 mt-4 mb-2 w-20 p-2 rounded-md'}
                   > 
                     <Text className={"text-white text-lg font-semibold"}>Upload</Text>
                   </TouchableOpacity>
@@ -92,7 +96,8 @@ const Home = () => {
             </View>
 
             <Pressable
-              style={[styles.button, styles.buttonClose]}
+              // style={[styles.button, styles.buttonClose]}
+              className={'border-2 border-red-500 p-2 rounded-md'}
               onPress={() => {
                 setModalVisible(!modalVisible);
                 // <------------change this while try to make upload function --------------->
@@ -100,7 +105,7 @@ const Home = () => {
                 setSelected(true);
               }}
             >
-              <Text style={styles.textStyle}>Close</Text>
+              <Text className={'text-lg mx-2 text-red-500 font-semibold'}>Cancel</Text>
             </Pressable>
           </View>
         </View>
